@@ -77,7 +77,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1228,1200.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1228,1377.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="IsLeapYear" />
       <Variable x:TypeArguments="x:Int32" Name="Year" />
@@ -95,7 +95,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="LeapYearUsingDoWhile" sap:VirtualizedContainerService.HintSize="552,1178" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="LeapYearUsingDoWhile" sap:VirtualizedContainerService.HintSize="552,1354.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Default="2" Name="MaxIterations" />
       </Sequence.Variables>
@@ -104,15 +104,15 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InterruptibleDoWhile Condition="[not isLeapYear]" CurrentIndex="[index]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="518,1095.3333333333333" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="[MaxIterations]">
+      <ui:InterruptibleDoWhile Condition="[not isLeapYear]" CurrentIndex="[index]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="518,1272" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="[MaxIterations]">
         <ui:InterruptibleDoWhile.Body>
-          <Sequence DisplayName="Check if leap year" sap:VirtualizedContainerService.HintSize="484,956.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Check if leap year" sap:VirtualizedContainerService.HintSize="484,1133.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Year Dialog" sap:VirtualizedContainerService.HintSize="450,278" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Could you please enter a year" Title="Year Dialog">
+            <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Year Dialog" sap:VirtualizedContainerService.HintSize="450,278" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Could you please enter a year" Title="Enter Year">
               <ui:InputDialog.Result>
                 <OutArgument x:TypeArguments="x:Int32">[Year]</OutArgument>
               </ui:InputDialog.Result>
@@ -125,7 +125,7 @@
                 <InArgument x:TypeArguments="x:Boolean">[(Year Mod 4 = 0 and Year mod 100 &lt;&gt; 0) or Year mod 400 = 0]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[IsLeapYear]" DisplayName="If leap year" sap:VirtualizedContainerService.HintSize="450,501.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[IsLeapYear]" DisplayName="If leap year" sap:VirtualizedContainerService.HintSize="450,678" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,169.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
@@ -137,13 +137,14 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,169.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,346" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message false " sap:VirtualizedContainerService.HintSize="382,109.33333333333333" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;This is not a leap year&quot;]" />
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message false " sap:VirtualizedContainerService.HintSize="382,118.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;This is not a leap year&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;year is not a leap year&quot;]" />
                 </Sequence>
               </If.Else>
             </If>
